@@ -12,7 +12,7 @@ export default async function Home() {
         <Clock title="Force no cache clock" cacheParams="no-cache" />
       </Suspense>
       <Suspense fallback={<DualClockFallback />}>
-        <DualClock title="Cached dual clock" cacheParams="force-cache" />
+        <DualClock title="Force cache clock" cacheParams="force-cache" />
       </Suspense>
     </div>
   );
