@@ -1,5 +1,5 @@
-import { getFormattedTime } from "../utils/formatTime";
-import { TimeApiResponse, simulateDelay } from "../utils/time";
+import { getFormattedTime } from "../_utils/formatTime";
+import { TimeApiResponse, simulateDelay } from "../_utils/time";
 import Loader from "./Loader";
 
 type ClockProps = {
@@ -10,6 +10,7 @@ type ClockProps = {
 async function getTime(cacheParams: RequestCache): Promise<string> {
   const response = await fetch("http://worldtimeapi.org/api/ip", {
     cache: cacheParams,
+    next: { tags: ["time"] },
   });
   await simulateDelay(2000);
   const { datetime } = (await response.json()) as TimeApiResponse;

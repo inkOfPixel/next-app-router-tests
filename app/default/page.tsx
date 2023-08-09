@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Clock, ClockFallback } from "./components/Clock";
-import { DualClock, DualClockFallback } from "./components/DualClock";
+import { Clock, ClockFallback } from "../_components/Clock";
+import { DualClock, DualClockFallback } from "../_components/DualClock";
 
 export default async function Home() {
   return (
@@ -9,7 +9,7 @@ export default async function Home() {
         <Clock title="Cached clock" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="No cache clock" cacheParams="no-cache" />
+        <Clock title="Cached clock" />
       </Suspense>
       <Suspense fallback={<DualClockFallback />}>
         <DualClock title="Cached dual clock" />
