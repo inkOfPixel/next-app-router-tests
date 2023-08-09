@@ -9,10 +9,10 @@ export default async function Home() {
         <Clock title="Cached clock" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="Cached clock" />
+        <Clock title="Force no cache clock" cacheParams="no-cache" />
       </Suspense>
       <Suspense fallback={<DualClockFallback />}>
-        <DualClock title="Cached dual clock" />
+        <DualClock title="Cached dual clock" cacheParams="force-cache" />
       </Suspense>
     </div>
   );
