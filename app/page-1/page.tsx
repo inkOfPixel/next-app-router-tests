@@ -13,16 +13,25 @@ export default async function Page1() {
         <Clock title="Same as above" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="Force cache clock" cacheParams="force-cache" />
+        <Clock
+          title="Force cache clock"
+          fetchParams={{ cache: "force-cache" }}
+        />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="No cache clock" cacheParams="no-cache" />
+        <Clock title="No cache clock" fetchParams={{ cache: "no-cache" }} />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="No store clock" cacheParams="no-store" />
+        <Clock title="No store clock" fetchParams={{ cache: "no-store" }} />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="Reload clock" cacheParams="reload" />
+        <Clock title="Reload clock" fetchParams={{ cache: "reload" }} />
+      </Suspense>
+      <Suspense fallback={<ClockFallback />}>
+        <Clock
+          title="Revalidate clock (5s)"
+          fetchParams={{ next: { revalidate: 5 } }}
+        />
       </Suspense>
       <Link className="text-sm text-white underline" href="page-2">
         Go to page 2

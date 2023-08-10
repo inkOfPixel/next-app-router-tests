@@ -4,23 +4,18 @@ import Loader from "./Loader";
 
 type ClockProps = {
   title: string;
-  cacheParams?: RequestCache;
+  fetchParams?: RequestInit;
 };
 
-async function getTime(cacheParams: RequestCache): Promise<string> {
-  const response = await fetch("http://worldtimeapi.org/api/ip", {
-    cache: cacheParams,
-  });
+async function getTime(fetchParams?: RequestInit): Promise<string> {
+  const response = await fetch("http://worldtimeapi.org/api/ip", fetchParams);
   await simulateDelay(2000);
   const { datetime } = (await response.json()) as TimeApiResponse;
   return getFormattedTime(datetime);
 }
 
-export const Clock = async function ({
-  title,
-  cacheParams = "default",
-}: ClockProps) {
-  const time = await getTime(cacheParams);
+export const Clock = async function ({ title, fetchParams }: ClockProps) {
+  const time = await getTime(fetchParams);
   return (
     <div className="grid grid-cols-2 gap-2 w-1/2">
       <div className="flex items-center">{title}</div>
