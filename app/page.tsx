@@ -23,11 +23,7 @@ export default async function Homepage() {
           <Clock title="No-store clock" fetchParams={{ cache: "no-store" }} />
         </Suspense>
         <Suspense fallback={<DualClockFallback title="Cached dual clock" />}>
-          <DualClock
-            title="Cached dual clock"
-            delay={5000}
-            fetchParams={{ cache: "no-cache" }}
-          />
+          <DualClock title="Cached dual clock" delay={5000} />
         </Suspense>
       </div>
       <Link className="text-sm text-white underline mt-8" href="/other-page">
