@@ -19,7 +19,7 @@ async function getTime(
 
 export const DualClock = async function ({
   title,
-  delay = 2000,
+  delay = 0,
   fetchParams,
 }: DualClockProps) {
   const time1 = await getTime(delay, fetchParams);

@@ -27,12 +27,11 @@ export default async function Homepage() {
             fetchParams={{ cache: "force-cache" }}
           />
         </Suspense>
-
         <Suspense fallback={<DualClockFallback title="Cached dual clock" />}>
           <DualClock title="Cached dual clock" delay={4000} />
         </Suspense>
         <Suspense fallback={<RomeClockFallback title="Rome clock" />}>
-          <RomeClock title="Rome clock" delay={4000} />
+          <RomeClock title="Rome clock" delay={2000} />
         </Suspense>
       </div>
       <Link className="text-sm text-white underline mt-8" href="/other-page">
