@@ -1,7 +1,6 @@
+import Link from "next/link";
 import { Suspense } from "react";
 import { Clock, ClockFallback } from "../_components/Clock";
-import { DualClock, DualClockFallback } from "../_components/DualClock";
-import Link from "next/link";
 
 export default async function Page2() {
   return (
@@ -11,10 +10,19 @@ export default async function Page2() {
         <Clock title="Cached clock" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="Force no cache clock" cacheParams="no-cache" />
+        <Clock title="Force cache clock" cacheParams="force-cache" />
       </Suspense>
-      <Suspense fallback={<DualClockFallback />}>
-        <DualClock title="Force cache clock" cacheParams="force-cache" />
+      <Suspense fallback={<ClockFallback />}>
+        <Clock title="No cache clock" cacheParams="no-cache" />
+      </Suspense>
+      <Suspense fallback={<ClockFallback />}>
+        <Clock title="Cached clock" cacheParams="no-store" />
+      </Suspense>
+      <Suspense fallback={<ClockFallback />}>
+        <Clock title="Cached clock" cacheParams="only-if-cached" />
+      </Suspense>
+      <Suspense fallback={<ClockFallback />}>
+        <Clock title="Cached clock" cacheParams="reload" />
       </Suspense>
       <Link className="text-sm text-white underline" href="page-1">
         Go to page 1
