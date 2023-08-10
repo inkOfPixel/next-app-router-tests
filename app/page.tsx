@@ -31,8 +31,8 @@ export default async function Homepage() {
         </Suspense>
         <Suspense fallback={<ClockFallback title="Revalidate clock (5s)" />}>
           <Clock
-            title="Revalidate clock (5s)"
-            fetchParams={{ cache: "default", next: { revalidate: 5 } }}
+            title="Revalidate clock (60s)"
+            fetchParams={{ cache: "default", next: { revalidate: 60 } }}
           />
         </Suspense>
       </div>
