@@ -31,8 +31,8 @@ export default async function Homepage() {
         <Suspense fallback={<DualClockFallback title="Cached dual clock" />}>
           <DualClock title="Cached dual clock" delay={4000} />
         </Suspense>
-        <Suspense fallback={<RomeClockFallback title="Cached dual clock" />}>
-          <RomeClock title="Cached dual clock" delay={4000} />
+        <Suspense fallback={<RomeClockFallback title="Rome clock" />}>
+          <RomeClock title="Rome clock" delay={4000} />
         </Suspense>
       </div>
       <Link className="text-sm text-white underline mt-8" href="/other-page">
