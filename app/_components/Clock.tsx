@@ -8,9 +8,12 @@ type ClockProps = {
 };
 
 async function getTime(cacheParams: RequestCache): Promise<string> {
+  const startTime = performance.now();
   const response = await fetch("http://worldtimeapi.org/api/ip", {
     cache: cacheParams,
   });
+  const endTime = performance.now();
+  console.log(`ELAPSED: ${endTime - startTime}`);
   await simulateDelay(2000);
   const { datetime } = (await response.json()) as TimeApiResponse;
   return getFormattedTime(datetime);
