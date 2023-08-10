@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Clock, ClockFallback } from "./_components/Clock";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import { DualClock, DualClockFallback } from "./_components/DualClock";
+import { RomeClock, RomeClockFallback } from "./_components/RomeClock";
 
 export default async function Homepage() {
   return (
@@ -12,18 +13,26 @@ export default async function Homepage() {
         <Suspense fallback={<ClockFallback title="Default clock" />}>
           <Clock title="Default clock" />
         </Suspense>
+        <Suspense fallback={<ClockFallback title="No-store clock" />}>
+          <Clock
+            title="No-store clock"
+            fetchParams={{ cache: "no-store" }}
+            delay={2000}
+          />
+        </Suspense>
         <Suspense fallback={<ClockFallback title="Force-cache clock" />}>
           <Clock
             title="Force-cache clock"
-            delay={3000}
+            delay={4000}
             fetchParams={{ cache: "force-cache" }}
           />
         </Suspense>
-        <Suspense fallback={<ClockFallback title="No-store clock" />}>
-          <Clock title="No-store clock" fetchParams={{ cache: "no-store" }} />
-        </Suspense>
+
         <Suspense fallback={<DualClockFallback title="Cached dual clock" />}>
-          <DualClock title="Cached dual clock" delay={5000} />
+          <DualClock title="Cached dual clock" delay={4000} />
+        </Suspense>
+        <Suspense fallback={<RomeClockFallback title="Cached dual clock" />}>
+          <RomeClock title="Cached dual clock" delay={4000} />
         </Suspense>
       </div>
       <Link className="text-sm text-white underline mt-8" href="/other-page">
