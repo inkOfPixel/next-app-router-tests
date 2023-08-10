@@ -11,7 +11,6 @@ async function getTime(cacheParams: RequestCache): Promise<string> {
   const response = await fetch("http://worldtimeapi.org/api/ip", {
     cache: cacheParams,
   });
-  console.log(response.headers);
   await simulateDelay(2000);
   const { datetime } = (await response.json()) as TimeApiResponse;
   return getFormattedTime(datetime);

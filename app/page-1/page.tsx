@@ -10,6 +10,9 @@ export default async function Page1() {
         <Clock title="Cached clock" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
+        <Clock title="Same as above" />
+      </Suspense>
+      <Suspense fallback={<ClockFallback />}>
         <Clock title="Force cache clock" cacheParams="force-cache" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
