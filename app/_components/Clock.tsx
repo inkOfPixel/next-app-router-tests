@@ -3,18 +3,26 @@ import { TimeApiResponse, simulateDelay } from "../_utils/time";
 
 type ClockProps = {
   title: string;
+  delay?: number;
   fetchParams?: RequestInit;
 };
 
-async function getTime(fetchParams?: RequestInit): Promise<string> {
+async function getTime(
+  delay: number,
+  fetchParams?: RequestInit
+): Promise<string> {
+  await simulateDelay(delay);
   const response = await fetch("http://worldtimeapi.org/api/ip", fetchParams);
-  await simulateDelay(2000);
   const { datetime } = (await response.json()) as TimeApiResponse;
   return getFormattedTime(datetime);
 }
 
-export const Clock = async function ({ title, fetchParams }: ClockProps) {
-  const time = await getTime(fetchParams);
+export const Clock = async function ({
+  title,
+  delay = 0,
+  fetchParams,
+}: ClockProps) {
+  const time = await getTime(delay, fetchParams);
   return (
     <div className="grid grid-cols-2 gap-2 w-full">
       <div className="flex items-center">{title}</div>

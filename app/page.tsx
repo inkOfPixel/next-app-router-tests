@@ -2,37 +2,31 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { Clock, ClockFallback } from "./_components/Clock";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
+import { DualClock, DualClockFallback } from "./_components/DualClock";
 
 export default async function Homepage() {
   return (
     <div className="flex flex-col px-16 py-24 w-10/12 items-center">
       <h1 className="text-4xl text-green-500">Homepage</h1>
       <div className="flex flex-col gap-4 mt-8 p-4 items-center border border-solid rounded-md">
-        <Suspense fallback={<ClockFallback title="Cached clock" />}>
-          <Clock title="Cached clock" />
+        <Suspense fallback={<ClockFallback title="Default clock" />}>
+          <Clock title="Default clock" />
         </Suspense>
-        <Suspense fallback={<ClockFallback title="Same as above" />}>
-          <Clock title="Same as above" />
-        </Suspense>
-        <Suspense fallback={<ClockFallback title="Force cache clock" />}>
+        <Suspense fallback={<ClockFallback title="Force-cache clock" />}>
           <Clock
-            title="Force cache clock"
+            title="Force-cache clock"
+            delay={3000}
             fetchParams={{ cache: "force-cache" }}
           />
         </Suspense>
-        <Suspense fallback={<ClockFallback title="No cache clock" />}>
-          <Clock title="No cache clock" fetchParams={{ cache: "no-cache" }} />
+        <Suspense fallback={<ClockFallback title="No-store clock" />}>
+          <Clock title="No-store clock" fetchParams={{ cache: "no-store" }} />
         </Suspense>
-        <Suspense fallback={<ClockFallback title="No store clock" />}>
-          <Clock title="No store clock" fetchParams={{ cache: "no-store" }} />
-        </Suspense>
-        <Suspense fallback={<ClockFallback title="Reload clock" />}>
-          <Clock title="Reload clock" fetchParams={{ cache: "reload" }} />
-        </Suspense>
-        <Suspense fallback={<ClockFallback title="Revalidate clock (5s)" />}>
-          <Clock
-            title="Revalidate clock (60s)"
-            fetchParams={{ cache: "default", next: { revalidate: 60 } }}
+        <Suspense fallback={<DualClockFallback title="Cached dual clock" />}>
+          <DualClock
+            title="Cached dual clock"
+            delay={5000}
+            fetchParams={{ cache: "no-cache" }}
           />
         </Suspense>
       </div>
