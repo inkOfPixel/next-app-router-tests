@@ -16,13 +16,10 @@ export default async function Page1() {
         <Clock title="No cache clock" cacheParams="no-cache" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="Cached clock" cacheParams="no-store" />
+        <Clock title="No store clock" cacheParams="no-store" />
       </Suspense>
       <Suspense fallback={<ClockFallback />}>
-        <Clock title="Cached clock" cacheParams="only-if-cached" />
-      </Suspense>
-      <Suspense fallback={<ClockFallback />}>
-        <Clock title="Cached clock" cacheParams="reload" />
+        <Clock title="Reload clock" cacheParams="reload" />
       </Suspense>
       <Link className="text-sm text-white underline" href="page-2">
         Go to page 2
