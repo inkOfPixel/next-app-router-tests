@@ -18,6 +18,9 @@ export default async function Homepage() {
         <Link className="text-sm text-white underline" href="/uncached-clock">
           Uncached clock
         </Link>
+        <Link className="text-sm text-white underline" href="/memoization">
+          Memoization
+        </Link>
       </div>
     </div>
   );
