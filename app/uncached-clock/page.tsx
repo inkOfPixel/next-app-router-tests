@@ -27,7 +27,7 @@ export default async function UncachedClockPage() {
       <Link className="text-sm text-white underline" href="/">
         Go to homepage
       </Link>
-      <ViewSourceButton link="https://github.com/inkOfPixel/next-app-router-tests/blob/main/app/uncached-page/page.tsx" />
+      <ViewSourceButton link="https://github.com/inkOfPixel/next-app-router-tests/blob/main/app/uncached-clock/page.tsx" />
     </div>
   );
 }
