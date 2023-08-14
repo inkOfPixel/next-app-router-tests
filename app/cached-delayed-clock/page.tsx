@@ -10,10 +10,9 @@ export default async function CachedDelayedClockPage() {
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
       <h1 className="text-4xl text-green-400">Cached delayed clock page</h1>
       <Banner>
-        The second clock has a 2s delay. The page is still generated at build
-        time and the api response is still fetched from data cache. However the
-        page is made responsive fast and the second clock is push from server
-        only after some time.
+        The second clock fetch data with a 2s delay. The page is still generated
+        at build time and the api response is still fetched from data cache. So
+        this delay is not visible
       </Banner>
       <div className="flex flex-col gap-4 p-4 items-center border border-solid rounded-md">
         <Suspense fallback={<ClockFallback title="Cached clock" />}>

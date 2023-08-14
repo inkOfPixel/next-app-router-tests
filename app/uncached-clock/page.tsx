@@ -9,12 +9,19 @@ export default async function UncachedClockPage() {
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
       <h1 className="text-4xl text-green-400">Uncached clock page</h1>
       <Banner>
-        This page includes a uncached clock. The fact that the RSC includes a
-        non cached fetch forces this page to be dynamically generated.
+        This page includes a uncached clock with a 2s delay. The fact that the
+        RSC includes a non cached fetch forces this page to be dynamically
+        generated. The delay is now visible. The page is returned fast and the
+        suspense boundary is filled with data coming from server pushes in a
+        while.
       </Banner>
       <div className="flex flex-col gap-4 p-4 items-center border border-solid rounded-md">
         <Suspense fallback={<ClockFallback title="Uncached clock" />}>
-          <Clock title="Uncached clock" fetchParams={{ cache: "no-store" }} />
+          <Clock
+            title="Uncached clock"
+            fetchParams={{ cache: "no-store" }}
+            delay={2000}
+          />
         </Suspense>
       </div>
       <Link className="text-sm text-white underline" href="/">
