@@ -10,7 +10,7 @@ export default async function UncachedClockPage() {
       <h1 className="text-4xl text-green-400">Memoization</h1>
       <Banner>
         Multiple request with the same options are memoized inside the same
-        render pass. The 3s clock has different parameters
+        render pass.
       </Banner>
       <div className="flex flex-col gap-4 p-4 items-center border border-solid rounded-md">
         <Suspense fallback={<ClockFallback title="Uncached clock 1s" />}>
@@ -31,7 +31,7 @@ export default async function UncachedClockPage() {
           <Clock
             title="Uncached clock 3s"
             delay={3000}
-            fetchParams={{ headers: [], cache: "no-store" }}
+            fetchParams={{ cache: "no-store" }}
           />
         </Suspense>
       </div>
