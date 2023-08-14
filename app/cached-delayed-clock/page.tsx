@@ -12,7 +12,7 @@ export default async function CachedDelayedClockPage() {
       <Banner>
         The second clock fetch data with a 2s delay. The page is still generated
         at build time and the api response is still fetched from data cache. So
-        this delay is not visible
+        no delay is visible
       </Banner>
       <div className="flex flex-col gap-4 p-4 items-center border border-solid rounded-md">
         <Suspense fallback={<ClockFallback title="Cached clock" />}>

@@ -11,9 +11,11 @@ export default async function UncachedClockPage() {
       <Banner>
         This page includes a uncached clock with a 2s delay. The fact that the
         RSC includes a non cached fetch forces this page to be dynamically
-        generated. The delay is now visible. The page is returned fast and the
-        suspense boundary is filled with data coming from server pushes in a
-        while.
+        generated. The delay is now visible.
+        <br />
+        <br />
+        The page is returned with a suspense boundary that is soon filled with
+        data coming from server.
       </Banner>
       <div className="flex flex-col gap-4 p-4 items-center border border-solid rounded-md">
         <Suspense fallback={<ClockFallback title="Uncached clock" />}>

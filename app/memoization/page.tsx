@@ -4,7 +4,7 @@ import { Banner } from "../_components/Banner";
 import { Clock, ClockFallback } from "../_components/Clock";
 import { ViewSourceButton } from "../_components/ViewSourceButton";
 
-export default async function UncachedClockPage() {
+export default async function MemoizationPage() {
   return (
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
       <h1 className="text-4xl text-green-400">Memoization</h1>
