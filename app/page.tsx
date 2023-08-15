@@ -30,6 +30,12 @@ export default async function Homepage() {
         >
           Uncached clock with parameter
         </Link>
+        <Link
+          className="text-sm text-white underline"
+          href={`/param-with-no-clock/${makeId(5)}`}
+        >
+          Page with parameter
+        </Link>
       </div>
     </div>
   );
