@@ -4,7 +4,7 @@ import { Banner } from "../_components/Banner";
 import { Clock, ClockFallback } from "../_components/Clock";
 import { ViewSourceButton } from "../_components/ViewSourceButton";
 
-export default async function UncachedClockPage() {
+export default async function RevalidationPage() {
   return (
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
       <h1 className="text-4xl text-green-400">Revalidation</h1>
@@ -23,7 +23,7 @@ export default async function UncachedClockPage() {
       <Link className="text-sm text-white underline" href="/">
         Go to homepage
       </Link>
-      <ViewSourceButton link="https://github.com/inkOfPixel/next-app-router-tests/blob/main/app/uncached-clock/page.tsx" />
+      <ViewSourceButton link="https://github.com/inkOfPixel/next-app-router-tests/blob/main/app/revalidation/page.tsx" />
     </div>
   );
 }

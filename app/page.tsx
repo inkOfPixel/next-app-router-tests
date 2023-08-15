@@ -21,6 +21,9 @@ export default async function Homepage() {
         <Link className="text-sm text-white underline" href="/memoization">
           Memoization
         </Link>
+        <Link className="text-sm text-white underline" href="/revalidation">
+          Revalidation
+        </Link>
       </div>
     </div>
   );
