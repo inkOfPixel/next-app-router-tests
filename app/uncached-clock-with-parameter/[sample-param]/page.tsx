@@ -4,7 +4,7 @@ import { Banner } from "../../_components/Banner";
 import { Clock, ClockFallback } from "../../_components/Clock";
 import { ViewSourceButton } from "../../_components/ViewSourceButton";
 
-export default async function RevalidationDynamicPage({
+export default async function UncachedClockWithParameterPage({
   params,
 }: {
   params: any;
@@ -12,16 +12,14 @@ export default async function RevalidationDynamicPage({
   return (
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
       <h1 className="text-4xl text-green-400">
-        Revalidation dynamic {params["sample-param"]}
+        Uncached clock + {params["sample-param"]}
       </h1>
-      <Banner>
-        This page includes a clock that is revalidated every minute.
-      </Banner>
+      <Banner>This page includes a uncached clock and a url parameter</Banner>
       <div className="flex flex-col gap-4 p-4 items-center border border-solid rounded-md">
         <Suspense fallback={<ClockFallback title="Uncached clock" />}>
           <Clock
             title="Uncached clock"
-            fetchParams={{ next: { revalidate: 60 } }}
+            fetchParams={{ cache: "no-store" }}
             delay={2000}
           />
         </Suspense>
@@ -29,7 +27,7 @@ export default async function RevalidationDynamicPage({
       <Link className="text-sm text-white underline" href="/">
         Go to homepage
       </Link>
-      <ViewSourceButton link="https://github.com/inkOfPixel/next-app-router-tests/blob/main/app/revalidation-dynamic/[sample-param]/page.tsx" />
+      <ViewSourceButton link="https://github.com/inkOfPixel/next-app-router-tests/blob/main/app/uncached-clock-with-parameter/[sample-param]/page.tsx" />
     </div>
   );
 }

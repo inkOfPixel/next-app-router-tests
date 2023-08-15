@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Banner } from "./_components/Banner";
+import { makeId } from "./_utils/id";
 
 export default async function Homepage() {
   return (
@@ -23,6 +23,12 @@ export default async function Homepage() {
         </Link>
         <Link className="text-sm text-white underline" href="/revalidation">
           Revalidation
+        </Link>
+        <Link
+          className="text-sm text-white underline"
+          href={`/uncached-clock-with-parameter/${makeId}`}
+        >
+          Uncached clock with parameter
         </Link>
       </div>
     </div>

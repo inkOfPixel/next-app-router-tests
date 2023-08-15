@@ -1,4 +1,4 @@
-import { getFormattedTime } from "../_utils/formatTime";
+import { getFormattedTime } from "../_utils/time";
 import { TimeApiResponse, simulateDelay } from "../_utils/time";
 
 type ClockProps = {
