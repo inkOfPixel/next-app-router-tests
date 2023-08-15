@@ -26,7 +26,7 @@ export default async function Homepage() {
         </Link>
         <Link
           className="text-sm text-white underline"
-          href={`/uncached-clock-with-parameter/${makeId}`}
+          href={`/uncached-clock-with-parameter/${makeId(5)}`}
         >
           Uncached clock with parameter
         </Link>
