@@ -4,6 +4,10 @@ import { Banner } from "../../_components/Banner";
 import { Clock, ClockFallback } from "../../_components/Clock";
 import { ViewSourceButton } from "../../_components/ViewSourceButton";
 
+export async function generateStaticParams() {
+  return [{ "sample-param": "pippo" }];
+}
+
 export default async function UncachedClockWithParameterPage({
   params,
 }: {
