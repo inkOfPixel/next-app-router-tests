@@ -11,7 +11,7 @@ export default async function HeadersReadPage() {
 
   return (
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
-      <h1 className="text-4xl text-green-400">Cached clock page</h1>
+      <h1 className="text-4xl text-green-400">Headers read page</h1>
       <Banner>
         This page is fetching data via a fetch requests with no specified cache
         parameter. By default this means that the api response is fetched and
