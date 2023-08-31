@@ -3,16 +3,8 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/cached-clock",
+        source: "/headers-read",
         headers: [
-          {
-            key: "x-custom-header",
-            value: "my custom header value",
-          },
-          {
-            key: "x-another-custom-header",
-            value: "my other custom header value",
-          },
           {
             key: "Cache-Control",
             value: "max-age=60",
