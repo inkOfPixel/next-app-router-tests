@@ -39,6 +39,12 @@ export default async function Homepage() {
         <Link className="text-sm text-white underline" href={`/headers-read`}>
           Page with headers read
         </Link>
+        <Link
+          className="text-sm text-white underline"
+          href={`/headers-read-no-cache`}
+        >
+          Page with headers read and no added response headers
+        </Link>
       </div>
     </div>
   );
