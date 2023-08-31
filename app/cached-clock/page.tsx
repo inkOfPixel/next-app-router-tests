@@ -10,9 +10,9 @@ export default async function CachedClockPage() {
     <div className="flex flex-col px-16 py-24 w-10/12 items-center gap-8">
       <h1 className="text-4xl text-green-400">Cached clock page</h1>
       <Banner>
-        This page is fetching data via a fetch requests with no specified cache
-        parameter. By default this means that the api response is fetched and
-        cached at build time. The page is statically generated.
+        This page is fetching data via a cached fetch requests. This means that
+        the api response is fetched and cached at build time. The page is
+        statically generated.
         <br />
         <br />
         The data cache key is built considering the url of the request and the

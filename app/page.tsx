@@ -36,6 +36,9 @@ export default async function Homepage() {
         >
           Page with parameter
         </Link>
+        <Link className="text-sm text-white underline" href={`/headers-read`}>
+          Page with headers read
+        </Link>
       </div>
     </div>
   );
