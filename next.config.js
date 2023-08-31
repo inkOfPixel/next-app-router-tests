@@ -3,7 +3,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/about",
+        source: "/cached-clock",
         headers: [
           {
             key: "x-custom-header",
